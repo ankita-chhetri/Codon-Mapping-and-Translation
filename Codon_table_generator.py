@@ -1,13 +1,8 @@
 # Codon Table Generator
 # This program translates DNA or RNA sequences into amino acids.
+# Step 1: Store the standard genetic code
 
-def main():
-    print("Welcome to the Codon Table Generator!")
-    print("-------------------------------------")
-    print("Translate a nucleotide sequence into amino acids.")
-
-    # Step 1: Store the standard genetic code
-    codon_table = {
+codon_table = {
         "TTT": "Phenylalanine", "TTC": "Phenylalanine",
         "TTA": "Leucine", "TTG": "Leucine",
         "TCT": "Serine", "TCC": "Serine",
@@ -43,9 +38,14 @@ def main():
         "GAA": "Glutamic acid", "GAG": "Glutamic acid",
         "GGT": "Glycine", "GGC": "Glycine",
         "GGA": "Glycine", "GGG": "Glycine"
-    }
-    
+}
+
+def main():
+    print("Welcome to the Codon Table Generator!")
+    print("-------------------------------------")
+    print("Translate a nucleotide sequence into amino acids.")
     print("\nTotal codons in the dictionary:", len(codon_table))
+
     if len(codon_table) == 64:
         print("Codon table check passed: all 64 codons are present.")
     else:
@@ -167,5 +167,5 @@ def main():
         else:
             print("Invalid choice. Please enter yes or no.")
 
-# Start the program
-main()
+        if __name__ == "__main__":
+            main()
