@@ -79,9 +79,16 @@ def main():
             if len(codon) == 3:
                 codons.append(codon)
             else:
-                print("Incomplete codon at the end:", codon)
+                incomplete_codon = codon
 
-        print("\nCodons found:")
+        if incomplete_codon:
+            print("\nIncomplete codon at the end:", incomplete_codon)
+
+        print("Number of complete codons:", len(codons))
+
+        if incomplete_codon:
+            print("Incomplete nucleotides:", len(incomplete_codon))
+                
 
         for codon in codons:
             print(codon)
