@@ -44,9 +44,12 @@ def main():
         "GGT": "Glycine", "GGC": "Glycine",
         "GGA": "Glycine", "GGG": "Glycine"
     }
-
+    
     print("\nTotal codons in the dictionary:", len(codon_table))
-
+    if len(codon_table) == 64:
+        print("Codon table check passed: all 64 codons are present.")
+    else:
+        print("Warning: The codon table should contain 64 codons.")
     # Step 2: Ask the user for a DNA or RNA sequence
     sequence = input("\nEnter a DNA or RNA sequence: ")
     sequence = sequence.upper().strip()
