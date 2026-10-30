@@ -135,14 +135,19 @@ def main():
         else:
             print("Sequence does not end with a stop codon.")
 
-        # Step 8: Display the complete codon table
-        print("\n" + "=" * 45)
-        print("STANDARD CODON TABLE")
-        print("=" * 45)
+        # Step 8: Ask whether the user wants to see the full codon table
+       
+        choice = input("\nDo you want to see the complete codon table? (yes/no): ")
 
-        for codon, amino_acid in codon_table.items():
-            print(f"{codon} : {amino_acid}")
+        if choice.strip().lower() in ["yes", "y"]:
+            print("\nSTANDARD CODON TABLE")
+            print("--------------------")
 
+            for codon, amino_acid in codon_table.items():
+                print(codon, ":", amino_acid)
+
+        else:
+            print("Codon table not displayed.")
 
 # Start the program
 main()
