@@ -101,6 +101,12 @@ def main():
         print("\nTranslated Amino Acid Sequence:")
         print(" - ".join(amino_acids))
 
+        # Show which amino acid belongs to each codon
+        print("\nCodon and Amino Acid Details:")
+
+        for i in range(len(codons)):
+            print(codons[i], "->", amino_acids[i])
+
         # Step 7: Identify start and stop codons
         start_codon = "ATG"
         stop_codons = ["TAA", "TAG", "TGA"]
