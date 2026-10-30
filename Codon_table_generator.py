@@ -89,23 +89,30 @@ def main():
 
         if incomplete_codon:
             print("Incomplete nucleotides:", len(incomplete_codon))
-
-        
         # Step 6: Translate codons into amino acids
         amino_acids = []
+        translated_codons = []
+        stop_codons = ["TAA", "TAG", "TGA"]
 
         for codon in codons:
             amino_acid = codon_table[codon]
+
             amino_acids.append(amino_acid)
+            translated_codons.append(codon)
+
+            if codon in stop_codons:
+                break
 
         print("\nTranslated Amino Acid Sequence:")
         print(" - ".join(amino_acids))
+        
+        
 
         # Show which amino acid belongs to each codon
         print("\nCodon and Amino Acid Details:")
 
-        for i in range(len(codons)):
-            print(codons[i], "->", amino_acids[i])
+        for i in range(len(translated_codons)):
+            print(translated_codons[i], "->", amino_acids[i])
 
         # Step 7: Identify start and stop codons
         start_codon = "ATG"
