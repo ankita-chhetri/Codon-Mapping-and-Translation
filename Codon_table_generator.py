@@ -107,8 +107,12 @@ def main():
             if codon in stop_codons:
                 break
 
-        print("\nTranslated Amino Acid Sequence:")
-        print(" - ".join(amino_acids))
+        # Step 6b: Display translation summary
+        print("\nTranslation Summary")
+        print("-------------------")
+        print("Total complete codons:", len(codons))
+        print("Codons translated:", len(translated_codons))
+        print("Amino acids and stop signals produced:", len(amino_acids))
         
         # Show which amino acid belongs to each codon
         print("\nCodon and Amino Acid Details:")
