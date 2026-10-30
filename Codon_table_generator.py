@@ -72,6 +72,7 @@ def main():
 
         # Step 5: Divide the sequence into codons
         codons = []
+        incomplete_codon = ""
 
         for i in range(0, len(sequence), 3):
             codon = sequence[i:i + 3]
@@ -88,11 +89,8 @@ def main():
 
         if incomplete_codon:
             print("Incomplete nucleotides:", len(incomplete_codon))
-                
 
-        for codon in codons:
-            print(codon)
-
+        
         # Step 6: Translate codons into amino acids
         amino_acids = []
 
@@ -126,9 +124,14 @@ def main():
         else:
             print("No stop codon found.")
 
+        if codons and codons[-1] in stop_codons:
+            print("Sequence ends with a stop codon:", codons[-1])
+        else:
+            print("Sequence does not end with a stop codon.")
+
         # Step 8: Display the complete codon table
         print("\n" + "=" * 45)
-        print("          STANDARD CODON TABLE")
+        print("STANDARD CODON TABLE")
         print("=" * 45)
 
         for codon, amino_acid in codon_table.items():
